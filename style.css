@@ -489,6 +489,32 @@ main{
     #user-menu h3{
         display: none;
     }
+
+    #nav-header{
+        display: none;
+    }
+    
+    main{
+        grid-row-end: -1;
+    }
+
+    #widgets{
+        display: none;
+    }
+
+    #user-toggle-menu:checked ~ * #nav-header{
+        display: grid;
+    }
+    
+    #user-toggle-menu:checked ~ main{
+        grid-row-end: -2;
+    }
+
+    #user-toggle-menu:checked ~ #widgets{
+        display: block;
+       }
+    
+
 }
 
 @media only screen and (max-width: 470px) {
@@ -540,6 +566,7 @@ main{
      justify-content: center;
     }
     #user-menu h3{
-        display: none;
+        display: block;
+        font-size: 0.8rem;
     }
 }
