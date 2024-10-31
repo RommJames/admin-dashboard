@@ -31,6 +31,8 @@ line-height: 1.5;
 -webkit-font-smoothing: antialiased;
 /* set bg */
 background-color: rgba(166, 209, 116, 0.397);
+/* overflow hidden */
+overflow: hidden;
 }
 
 /* 5. Improve media defaults */
@@ -68,8 +70,9 @@ isolation: isolate;
 #container{
     display: grid;        
     grid-template-columns: auto 3fr 1fr;
-    grid-template-rows: auto 2fr 2fr;
+    grid-template-rows: auto 2fr 2fr 1fr;
     height: 100vh;
+    overflow: hidden;
 }
 
 img[src$=".svg"]:not(img[src*="dashboard"]){
@@ -281,6 +284,64 @@ hr{
     padding: 10px 5px;
 }
 
+/* Main */
+main{
+    padding: 15px 10px ;   
+}
+
+#main-card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    /* grid-template-rows: repeat(auto-fit, minmax(200px)); */
+}
+
+#main-card-icons{
+    display: flex;
+    justify-content: right;
+    padding-top: 30px;
+}
+.main-card{
+    background-color: white;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 15px;
+    border-left: 10px solid var(--light-color);
+    box-shadow: var(--box-shadow);
+}
+
+.main-card p {
+    height: 100px;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    padding-right: 50px;
+}
+#main-card-icons > a > img{    
+    height: 30px;
+    margin: 5px;
+}
+#main-card-icons > a:hover, .list-certificate > a:hover > img{
+    transform: scale(1.3);
+}
+
+/* certificates */
+#certificate-card{
+    background-color: white;
+    padding: 25px 20px;
+}
+
+.list-certificate p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+}
+
+
+
 /* Sections */
 #sidebar{
     background-color: var(--primary-color);
@@ -308,6 +369,7 @@ main{
 /* Scroll Bar Design for main */
 /* For Webkit browsers */
 ::-webkit-scrollbar {    
+    height: 5px;
     width: 5px; /* Width of the scrollbar */
 }
 
@@ -354,4 +416,130 @@ main{
 #title-sidebar:hover{
     transform: scale(0.9);
     opacity: 0.7;
+}
+
+#user-toggle-menu{
+    position: absolute;
+    appearance: none;
+}
+
+#header-profile:hover{
+    transform: scale(0.9);
+    cursor: pointer;    
+    background-color: #94a3b818;    
+}
+
+#user-toggle-menu:checked ~ * #nav-header{
+    display: none;
+}
+
+#user-toggle-menu:checked ~ main{
+    grid-row-end: -1;
+}
+
+/* Responsive Web */
+
+@media only screen and (max-width: 768px) {
+   #nav-header{
+    grid-template-columns: 1fr;
+    gap: 10px;
+   }
+
+   #nav-profile{
+        justify-content: center;
+   }
+
+   #header-links{
+        justify-content: center;
+   }
+
+   main{
+        grid-column: 2 / -1;
+        grid-row: 2 / 4;
+   }
+
+   #widgets{
+        grid-column: 2 / -1;
+        grid-row: 4 / -1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #9e9e9e2a;
+        box-shadow: var(--box-shadow) inset;        
+   }
+
+   #widgets h2{
+        font-size: 1rem;
+   }
+
+   #widgets h3{
+    font-size: 1rem;
+   }
+
+   #widgets p{
+    font-size: 0.8rem;
+   }
+
+   #user-toggle-menu:checked ~ #widgets{
+    display: none;
+   }
+}
+
+@media only screen and (max-width: 560px) {
+    #user-menu h3{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    header, #header-links li > a{
+        font-size: 0.8rem;
+    }
+    #header-links{
+        flex-wrap: wrap;        
+    }
+
+    #header-links li{
+        margin: 5px;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    #header-links{
+        flex-wrap: wrap;        
+    }
+
+    #header-links li{
+        margin: 5px;
+    }
+
+    #user-menu h3{
+        display: block;
+    }
+
+    #search{
+        grid-template-rows: auto auto;
+        gap: 5px;
+    }
+
+    label[for="search-bar"]{
+        grid-row: 2 / -1;
+        grid-column: 1 / -1;
+    }
+
+    #user-menu{
+        grid-column: 1 / -1;
+    }
+
+
+}
+
+@media only screen and (max-width: 400px) {
+    #header-profile{
+     justify-content: center;
+    }
+    #user-menu h3{
+        display: none;
+    }
 }

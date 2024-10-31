@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+
+body{
+    background: linear-gradient(#f7f7f7,#858585);  
+    /* height: 100vh;  */
+}
+* {
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+   margin: 0;
+   padding: 0;
+}
+
+
+.quiz_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e2f1fd;
+    box-shadow: rgba(0, 0, 0, 0.2)0 5px 10px;    
+    width: 600px;
+    margin: 10% auto ;
+    margin-top: 0;
+}
+
+.quiz_container div{    
+    width: 100%;
+    text-align: center;
+}
+
+.quiz_container div h1{
+    font-size: 2em;
+    padding: 20px 15px;
+}
+
+ul li{
+    display: flex;
+    align-items: center;    
+    /* margin-left: 150px; */
+    /* margin-left: 15px; */
+    list-style: none;
+    padding: 10px;
+    font-weight: bold;      
+    /* border: 2px solid black; */
+    margin: auto;
+    width: 60%;
+}
+
+ul{
+    margin-bottom: 15px;    
+    /* border: 2px solid black; */
+}
+
+input{
+    margin-right: 15px;
+}
+
+.btn{
+    width: 100%;    
+    border: none;
+    padding: 30px 30px;
+    font-size: 1.1em;
+    background: #007acc;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.2)0 5px 10px; 
+    font-weight: bolder;
+}
+
+.btn:hover{    
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background: #46d8f9;
+    color: black;    
+}
+
+.msg{
+    background: #ff9ff3;
+    position: absolute;
+    top: 40px;
+    font-weight: bolder;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.5)0 5px 10px;
+    /* left: 860px; */
+    animation: msg 0.2s 1 ease-in-out;
+    display: none;
+    border-radius: 10%;
+    /* transform: scale(0); */
+}
+
+#msg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes msg {
+    0%{
+        transform: scale(0);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.Score{
+    background: #fda7df;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin: auto; 
+    margin-top: 150px;   
+    margin-bottom: 40px;
+    box-shadow: rgba(0, 0, 0, 0.2)0 5px 10px;    
+}
+
+@media screen and (max-width: 610px)  {
+    *{
+        font-size: 0.8rem;
+    }
+
+    .quiz_container{
+        width: 350px;
+    }
+
+    .Score{
+        width: 250px;
+    }
+}
+

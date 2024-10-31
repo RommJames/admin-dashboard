@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <?php
+	include_once("../icon.php");
+	?>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="msg-container">
+        <div class="msg" id="msg">
+            You finished the questions
+         </div>
+    </div>    
+
+    <div class="Score">
+        <h1>score : <span id="score">0</span></h1>
+    </div>
+
+    <div class="quiz_container">
+        <div>
+            <h1 id="question">Question</h1>
+        <ul id="ul">
+            <li><input type="radio" id="a" name="answer" class="answer"><label for="a" id="a_ans">Answer</label></li>
+            <li><input type="radio" id="b" name="answer" class="answer"><label for="b" id="b_ans">Answer</label></li>
+            <li><input type="radio" id="c" name="answer" class="answer"><label for="c" id="c_ans">Answer</label></li>
+            <li><input type="radio" id="d" name="answer" class="answer"><label for="d" id="d_ans">Answer</label></li>
+        </ul>
+        <button id="btn" class="btn" onclick="Btn()">Submit</button>
+        </div>        
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

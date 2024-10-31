@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim Trainer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/logo.css">    
+    <link rel="shortcut icon" href="../../../media/MFI.png" type="image/x-icon">
+</head>
+<body>
+<div id="main-container">    
+    <div id="start-game-container">
+        <div id="enter-name">
+            <div id="logo">
+                <div class="aim-logo">
+                    <div class="line-optic">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>            
+                    <div class="ring" id="outer-ring">            
+                    </div>
+                    <div class="ring" id="dashed-ring">            
+                    </div>
+                    <div class="ring" id="inner-ring">            
+                    </div>
+                    <div class="ring" id="center-dot">
+                        <div></div>
+                    </div>
+                </div>
+                <div id="aim-title">
+                    <h2>
+                        Aim Trainer
+                        <span>by RJCuya</span>
+                    </h2>
+                </div>
+            </div>
+            <div id="game-desc">
+                <p>
+                    Aim Trainer will test and help you improve your aiming skills and reflex performance.
+                </p>
+            </div>  
+            <div class="enter-name">                        
+                <label for="player_name">                                
+                    <input type="text" placeholder="Enter Your Name" id="player_name" name="player_name" title="10 characters only, spaces are not allowed">
+                </label>        
+                <input type="button" value="Enter Game" id="enter-name-btn" class="game-btn">                
+                <!-- <a href="leaderboards.php" id="view-leader-btn" class="game-btn">View Leaderboards</a> -->
+                <!-- <input type="button" value="View Leaderboards" id="view-leader-btn" class="game-btn">                                 -->
+            </div>                      
+        </div>
+    </div>
+    <div id="game-start-container" class="hide-container">
+        <div id="game-header">
+            <div class="game-logo">
+                <div class="aim-logo">
+                    <div class="line-optic">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>            
+                    <div class="ring" id="outer-ring">            
+                    </div>
+                    <div class="ring" id="dashed-ring">            
+                    </div>
+                    <div class="ring" id="inner-ring">            
+                    </div>
+                    <div class="ring" id="center-dot">
+                        <div></div>
+                    </div>
+                </div>
+                <div id="aim-title">
+                    <h2>
+                        Aim Trainer
+                        <span>by RJCuya</span>
+                    </h2>
+                </div>
+            </div>
+            <div id="setting-container">
+                <div class="name-info">
+                    <b>Player Name: </b>
+                    <span id="name-container">
+                    </span>
+                </div>
+                <div class="difficulty-info">                    
+                    <b>Difficulty: </b>
+                    <select name="game-difficulty" id="game-difficulty">
+                        <!-- <option value="na">Choose Difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advance">Advance</option> -->
+                    </select>
+                    <p id="dif-desc"> 
+                    </p>
+                    <p id="chances-info">                    
+                    </p>
+                </div>
+                <div class="scoreboard">
+                    <div class="score">
+                        <b>Score: </b>
+                        <span id="playerScore"></span>
+                    </div>
+                    <div class="target-remaining">
+                        <b>Remaining Targets: </b>
+                        <span id="numberChances">15 - 30</span>
+                    </div>
+                </div>
+                <div class="start-btn-container">
+                    <button class="game-btn" id="start-game-btn">
+                        Start Game
+                    </button>                    
+                </div>
+            </div>
+        </div>
+        <div id="target-container">
+            <div class="targetCircle" id="target-circle">                
+            </div>
+        </div>
+    </div>
+    <div id="game-over-container" class="hide-container">        
+    </div>
+</div>
+<script src="difficulty.js"></script>
+<script src="game.js"></script>
+<script src="target.js"></script>
+</body>
+</html>

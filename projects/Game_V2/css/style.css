@@ -1,0 +1,169 @@
+
+body{
+    background: url(../images/background.png);    
+}
+
+.back-layer{
+
+    height: 100vh;
+    width: 100vw;
+
+    box-shadow: rgba(0, 0, 0, 0.5) 0 5px 10px;
+    position: relative;    
+    z-index: -2;
+}
+
+@keyframes scroll-background {
+    0% {
+        transform: translateY(0%);
+
+    }
+
+    100%{
+        transform: translateY(15%);
+
+    }
+}
+
+.main{
+    height: 1014px;
+    width: 1050px;    
+}
+
+.bullet{
+    margin-left: 499px;  
+}
+
+.bee-ctn:nth-child(odd){    
+    animation: enemy_entrance_odd 2s 1 ease-in-out;
+}
+
+.bee-ctn:nth-child(even){    
+    animation: enemy_entrance_even 2s 1 ease-in-out;
+
+}
+
+.remove_animation{
+    animation: no_animation 0s 0 ease-in-out ;
+}
+
+@keyframes no_animation {
+    0%{
+        /*  */
+    }
+    100%{
+        /*  */
+    }
+}
+
+@keyframes enemy_entrance_odd {
+    0%{
+        transform: translateX(500%) translateY(-200%) rotateY(180deg)
+    }
+
+    40%{
+        transform: rotateY(310deg);
+    }
+
+    80%{
+        transform: rotateX(310deg);
+    }
+
+    100%{
+        transform:  translateX(0%) translateY(0%);
+    }
+}
+
+
+@keyframes enemy_entrance_even {
+    0%{
+        transform: translateX(-500%) translateY(-200%) rotateY(-180deg)
+    }
+
+    40%{
+        transform: rotateY(-310deg);
+    }
+
+    80%{
+        transform: rotateX(-310deg);
+    }
+
+    100%{
+        transform:  translateX(0%) translateY(0%);
+    }
+}
+
+.player{    
+    animation: player 2s 1 ease-in-out;
+}
+
+@keyframes player {
+    0%{
+        transform: translateY(200%);
+    }
+    30%{
+        transform: translateX(-200%) translateY(60%) rotateY(330deg);
+    }
+
+    60%{
+        transform: translateX(200%);
+    }
+    85%{
+        transform: translateY(200%) rotateY(180deg);
+    }
+}
+
+.formation{
+    animation: formation 10s 2s infinite
+    alternate-reverse ease-in-out;
+}
+
+@keyframes formation {
+    10%{
+        transform: translateX(5%) translateY(-15%);
+    }
+
+    30%{
+        transform: translateX(25%) translateY(15%);
+    }
+
+    50%{
+        transform: translateY(-20%);
+    }
+
+    70%{
+        transform: translateX(-5%) translateY(40%);
+    }
+
+    90%{
+        transform: translateX(-25%) translateY(-15%);
+    }
+}
+
+.display_none{
+    display: none;
+}
+
+.enemyBullet{
+    width:3px;
+    height:12px;
+    position:absolute;
+    background-color: red;
+    margin-left: 50px; 
+    z-index: 2;
+    animation: enemyBullet 4s infinite ease-in-out;
+}
+
+
+
+@keyframes enemyBullet {
+    0%{
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(1500px);
+    }
+}
+
+

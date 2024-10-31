@@ -1,0 +1,275 @@
+/* base */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --------------------- Game --------------------- */
+
+/* Start Game */
+
+#start-game-container{
+    height: 100vh;  
+    background: url(../media/background.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#enter-name{    
+    width: 350px;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#logo{
+    position: relative;        
+    height: 70px;   
+    /* border: 2px solid red;       */
+    /* transform: scale(0.3); */
+    /* border: 2px solid red; */
+}
+
+#game-desc{
+    padding: 15px 20px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 5px;
+}
+
+/* Input Player Name */
+#player_name{
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+    font-size: 1.1rem;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#player_name:focus, #player_name:hover{
+    transform: scale(1.1);
+}
+
+a{
+    text-decoration: none;
+}
+
+.game-btn{
+    display: block;
+    margin: 5px auto;
+    border: none;
+    padding: 5px 25px;
+    background-color: rgb(11, 10, 10);
+    color: white;
+    border-radius: 5px;
+}
+
+.game-btn:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
+#view-leader-btn{
+    display: block;
+    text-decoration: none;
+    width: 175px;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(45, 38, 38);
+}
+
+.inputError{
+    border: 2px solid rgb(207, 9, 9);
+}
+
+.inputError:focus{
+    border: 2px solid rgb(207, 9, 9);
+}
+
+.inputError::placeholder{
+    color: rgb(207, 9, 9);
+}
+
+/* Game */
+#game-start-container{
+    height: 100vh;
+    background: url(../media/background.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;    
+}
+
+#game-header{
+    padding: 15px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+.game-logo{
+    position: relative;    
+    /* border: 2px solid red; */
+    width: 300px;
+    height: 70px;
+    margin: auto;    
+}
+
+/* Setting Container */
+/* #setting-container{
+
+} */
+
+.difficulty-info p{
+    text-indent: 35px;
+}
+
+.scoreboard{
+    display: flex;
+}
+
+.scoreboard div{
+    margin: 0px 15px;
+}
+
+#game-difficulty{
+    padding: 3px 10px;
+    border-radius: 15px;
+}
+
+#chances-info{
+    text-indent: 0px;
+    margin-bottom: 5px;
+}
+
+.disabled-btn{
+    opacity: 0.5;        
+}
+
+/* Target Circle */
+#target-container{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 43vh;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.targetCircle{
+    /* height: 40px;
+    width: 40px; */
+    /* background-color: black; */   
+    position: relative; 
+    /* top: 40%;
+    left: 40%;
+    bottom: 20%;
+    right: 40%; */
+    transition: all 0.1s ease-in-out;
+    animation-name: popout;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-fill-mode: backwards;
+    border-radius: 100px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.target-easy{
+    height: 40px;
+    width: 40px;
+}
+
+.target-int{
+    height: 25px;
+    width: 25px;
+}
+
+.target-adv{
+    height: 20px;
+    width: 20px;
+}
+
+@keyframes popout {
+    0%{
+        transform: scale(0);
+    }
+
+    50%{
+        transform: scale(1.2);
+    }
+}
+
+/* Game Over Container */
+#game-over-container{
+    height: 100vh;
+    background: url(../media/background.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.over-panel{
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;    
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+}
+
+.over-details{
+    text-align: left;
+    box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin: 10px 0px;
+}
+
+.over-details ul{
+    list-style: none;
+}
+
+.hide-container{
+    display: none;    
+}
+
+.containerTransition{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: all 0.5s ease-in-out
+}
+
+/* Main Container to set screen only 100vh */
+#main-container{
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* TextArea */
+
+textarea{
+    display: block;
+    margin: auto;
+    width: 200px;
+    border-radius: 5px;
+    padding: 5px;
+}
+

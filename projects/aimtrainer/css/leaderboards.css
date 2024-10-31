@@ -1,0 +1,194 @@
+/* base */
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --------------------------------------- */
+
+#leaderboards-container{
+    background: url(../media/background.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+    /* height: 100vh;    */
+    display: grid;
+    grid-template-areas: 
+    "o5 e5 i5 a5"
+    "o5 e5 i5 a5"
+    "rp rp btn btn" ;
+    grid-gap: 5px;    
+}
+
+#leaderboards-container > div{
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1) inset;
+    padding: 10px;
+    overflow: hidden;
+    /* width: 250px; */
+}
+
+@media screen and (max-width: 900px) {
+    #leaderboards-container{
+        grid-template-areas: 
+    "e5 i5 a5"
+    "e5 i5 a5"
+    "o5 o5 o5"
+    "rp rp btn" ;
+    }
+
+    #top5overall .player{
+        display: inline-block;
+        width: 235px;
+    }    
+    #top5overall > div{
+        display: block;
+        /* border: 2px solid red; */
+        width: 745px;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #leaderboards-container{
+        grid-template-areas: 
+    "rp rp"
+    "e5 i5"
+    "e5 i5"
+    "a5 o5"
+    "a5 o5"
+    "btn btn" ;
+    }
+
+    #top5overall .player{
+        display: block;
+        /* border: 2px solid blue; */
+        width: 97%;
+    }    
+    #top5overall > div{
+        display: block;
+        /* border: 2px solid red; */
+        width: 100%;
+        /* margin: auto; */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #leaderboards-container{
+        grid-template-areas: 
+    "rp"
+    "e5"
+    "i5"
+    "a5"
+    "o5"
+    "btn" ;
+    }
+}
+
+#recently-played{
+    grid-area: rp;
+    /* background-color: yellow; */
+}
+
+#top5overall{
+    grid-area: o5;
+    /* background-color: orange; */
+}
+
+#top5easy{
+    grid-area: e5;
+    /* background-color: lightcoral; */
+}
+
+#top5intermediate{
+    grid-area: i5;
+    /* background-color: pink; */
+}
+
+#top5advance{
+    grid-area: a5;
+    /* background-color: lightgreen; */
+}
+
+#btn-container{
+    grid-area: btn;
+    /* background-color:lightskyblue; */
+}
+
+/* List Players */
+#leaderboards-container h2{
+    text-align: center;
+}
+.player ul{
+    list-style: none;
+}
+.player{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    /* display: inline-block;
+    width: 235px;
+    margin: a; */
+}
+
+.player i{
+    box-shadow: 0px 0px 15px 5px rgba(162, 0, 255, 0.1) inset;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    /* height: 100px; */
+    /* border: 2px solid red;     */
+}
+
+.scroll{
+    overflow: auto;
+    display: block;
+    height: 100px;
+    box-shadow: 0px 0px 15px 5px rgba(162, 0, 255, 0.1) inset;
+    border-radius: 5px;
+    padding: 5px;
+    /* text-overflow: clip; */
+}
+
+/* Buttons */
+a{
+    text-decoration: none;
+}
+
+#btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.game-btn{
+    display: block;
+    margin: 5px;
+    border: none;
+    padding: 5px 25px;
+    background-color: rgb(11, 10, 10);
+    color: white;
+    border-radius: 5px;    
+}
+
+.game-btn:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
+/* All Players List */
+.lb-title{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 5px;
+}

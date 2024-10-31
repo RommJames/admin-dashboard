@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galaxian</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- <div class="back-layer"></div> -->
+<img src="images/background.png" alt="background" class="layer current back-layer">
+
+<div class="layer start-layer current">
+    <div class="wrapper layer">
+        <img src="images/start_logo.png" alt="game logo">
+        <!-- <form id="start-form"> -->
+            <input type="text" placeholder="INPUT YOUR NAME" id="player-name" onkeyup="this.value = this.value.toUpperCase()">
+            <button class="btn-start">Start Game</button>
+        <!-- </form> -->
+    </div>
+</div>
+
+<div class="layer game-layer">
+    <div class="layer ui-layer">
+        <div class="info-container">
+            <div class="info-box">
+                <span>Time</span>
+                <span class="time-display">00:00</span>
+            </div>
+            <div class="info-box">
+                <span>Life</span>
+                <span class="life-display">
+                    <img src="images/life.png" alt="life">
+                    <img src="images/life.png" alt="life">
+                </span>
+            </div>
+            <div class="info-box">
+                <span>Player</span>
+                <span class="player-display">John Doe</span>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper layer">
+        <div class="main"></div>
+
+    </div>
+</div>
+
+<div class="layer end-layer">
+    <div class="rank-list">
+        <table>
+            <thead>
+            <tr>
+                <th>Position</th>
+                <th>Player</th>
+                <th>Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>01:20</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>John Doe</td>
+                <td>01:50</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>John Doe</td>
+                <td>02:20</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <button class="btn-restart">Restart game</button>
+</div>
+
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script>
+<script src="js/ingame.js"></script>
+</body>
+</html>
