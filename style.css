@@ -1,0 +1,190 @@
+:root{
+    --primary-color: #aee759;    
+    --secondary-color: #55ac2d;
+    --light-color: #a7f3d0;
+    --black: #1e293b;
+    --gray: #94a3b8;
+    --box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.3);
+    --white-outline: drop-shadow(0 0 0 black) drop-shadow(2px 2px 0 white);
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+box-sizing: border-box;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+transition: all 0.3s ease-in-out;
+}
+
+/* 2. Remove default margin */
+* {
+margin: 0;
+}
+
+body {
+/* 3. Add accessible line-height */
+line-height: 1.5;
+/* 4. Improve text rendering */
+-webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+text-wrap: balance;
+}
+
+/*
+9. Create a root stacking context
+*/
+#root, #__next {
+isolation: isolate;
+}
+
+/* container */
+#container{
+    display: grid;
+    color: white;
+    gap: 5px;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 2fr 2fr;
+    height: 100vh;
+}
+
+/* Navigation Bar */
+
+#sidebar{
+    display: grid;
+    grid-template-rows: auto 3fr auto;
+    align-items: center;
+    padding: 15px;    
+}
+
+
+#title-sidebar img{
+    height: 60px;
+    filter: var(--white-outline);
+}
+
+img[src$=".svg"]:not(img[src*="dashboard"]){
+    height: 20px;        
+    filter: var(--white-outline);
+}
+
+a, #title-sidebar > h1{
+    text-decoration: none;            
+    filter: var(--white-outline);
+}
+
+.text-sidebar{
+    color: black;    
+    font-size: 1.5rem;    
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+}
+
+nav ul[id^="lists"] li a{    
+    position: relative;
+    gap: 30px;    
+    padding: 5px;
+    font-weight: 650;    
+}
+
+
+nav ul[id^="lists"] a, #title-sidebar{
+    display: flex;   
+    align-items: center;    
+}
+
+/* lists hover effect */
+
+nav ul[id^="lists"] a:hover{
+    background-color: rgba(195, 255, 105, 0.068);    
+    margin-left: 40px;
+}
+
+nav ul[id^="lists"] a::after{      
+    content: "";
+    position: absolute;
+    top: 42px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    transform: scaleX(0);  
+    transform-origin: left;
+}
+
+nav ul[id^="lists"] a:hover::after{
+    transform: scaleX(1);  
+}
+
+/* Sections */
+#sidebar{
+    background-color: var(--primary-color);
+    grid-row: 1 / -1;
+    color: black;
+}
+
+header{
+    background-color: blue;
+    grid-column: 2 / -1;
+}
+
+main{
+    background-color: purple;
+    grid-row: 2 / -1;
+    overflow-y: scroll;
+}
+
+#widgets{
+    background-color: orange;
+    grid-column: -2 / -1;
+    grid-row: 2 / -1;
+}
+
+/* Scroll Bar Design for main */
+/* For Webkit browsers */
+::-webkit-scrollbar {    
+    width: 5px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* Track background color */
+    border-radius: 10px; /* Round the corners */
+}
+
+::-webkit-scrollbar-thumb {    
+    background: #b9b9b979; /* Thumb color */
+    border-radius: 10px; /* Round the corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Thumb color on hover */
+}
+
+/* For Firefox */
+.scrollbar {
+    scrollbar-width: thin; /* Make the scrollbar thin */
+    scrollbar-color: #888 #f1f1f1; /* Thumb color and track color */
+}

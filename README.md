@@ -1,6 +1,5 @@
 # admin-dashboard
 
-## Description
 Welcome to **Admin Dashboard**, a project dedicated to practicing and showcasing my skills in web layout using only HTML and CSS. This dashboard highlights the power of CSS layout tools, particularly Flexbox and Grid, to create a responsive and visually appealing interface.
 
 ## Key Features
