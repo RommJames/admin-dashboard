@@ -79,7 +79,7 @@ img[src$=".svg"]:not(img[src*="dashboard"]){
 
 #sidebar{
     display: grid;
-    grid-template-rows: auto 3fr auto;
+    grid-template-rows: auto 3fr auto;    
     align-items: center;
     padding: 15px;        
     z-index: 9999;
@@ -118,7 +118,7 @@ nav ul[id^="lists"] li a{
 
 nav ul[id^="lists"] a, #title-sidebar{
     display: flex;       
-    align-items: center;    
+    align-items: center;       
 }
 
 /* lists hover effect */
@@ -306,4 +306,29 @@ main{
 .scrollbar {
     scrollbar-width: thin; /* Make the scrollbar thin */
     scrollbar-color: #888 #f1f1f1; /* Thumb color and track color */
+}
+
+/* Toggle Menu */
+#toggle-menu{
+    position: absolute;
+    appearance: none;
+}
+
+#toggle-menu:checked ~ * .text-sidebar{
+    display: none;    
+}
+
+
+#toggle-menu:checked ~ * a, #toggle-menu:checked ~ * a:hover{
+    justify-content: center;
+    margin: 0;
+} 
+
+#title-sidebar{
+    cursor: pointer;
+}
+
+#title-sidebar:hover{
+    transform: scale(0.9);
+    opacity: 0.7;
 }
