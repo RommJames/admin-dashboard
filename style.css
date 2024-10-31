@@ -4,7 +4,7 @@
     --light-color: #a7f3d0;
     --black: #1e293b;
     --gray: #94a3b8;
-    --box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.3);
+    --box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
     --white-outline: drop-shadow(0 0 0 black) drop-shadow(2px 2px 0 white);
 }
 
@@ -60,12 +60,15 @@ isolation: isolate;
 
 /* container */
 #container{
-    display: grid;
-    color: white;
-    gap: 5px;
-    grid-template-columns: 1fr 3fr 1fr;
+    display: grid;        
+    grid-template-columns: auto 3fr 1fr;
     grid-template-rows: auto 2fr 2fr;
     height: 100vh;
+}
+
+img[src$=".svg"]:not(img[src*="dashboard"]){
+    height: 20px;        
+    filter: var(--white-outline);
 }
 
 /* Navigation Bar */
@@ -74,7 +77,8 @@ isolation: isolate;
     display: grid;
     grid-template-rows: auto 3fr auto;
     align-items: center;
-    padding: 15px;    
+    padding: 15px;        
+    z-index: 9999;
 }
 
 
@@ -83,14 +87,11 @@ isolation: isolate;
     filter: var(--white-outline);
 }
 
-img[src$=".svg"]:not(img[src*="dashboard"]){
-    height: 20px;        
-    filter: var(--white-outline);
-}
-
 a, #title-sidebar > h1{
     text-decoration: none;            
     filter: var(--white-outline);
+    font-size: 2rem;
+    color: black;
 }
 
 .text-sidebar{
@@ -112,7 +113,7 @@ nav ul[id^="lists"] li a{
 
 
 nav ul[id^="lists"] a, #title-sidebar{
-    display: flex;   
+    display: flex;       
     align-items: center;    
 }
 
@@ -139,6 +140,107 @@ nav ul[id^="lists"] a:hover::after{
     transform: scaleX(1);  
 }
 
+/* Header */
+header{            
+    box-shadow: var(--box-shadow);
+    padding: 15px;
+    display: grid;
+    row-gap: 15px;
+}
+
+#search, #nav-header{
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 0.5fr; 
+    align-items: center;   
+}
+
+label[for="search-bar"], #user-menu, #header-profile{
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: center;
+}
+
+#search-bar{
+    width: 80%;
+    margin: 0px 15px;
+    outline: none;
+    border: none;
+    background-color: #e9e1e1;
+    border-radius: 15px;
+    padding: 2.5px 15px;
+}
+
+#search-bar:focus{
+    background-color: rgba(128, 128, 128, 0.055);    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 0px;
+}
+
+img[alt*="search"], img[alt*="notif"]{
+    transform: scale(1.5);
+}
+
+img[alt*="search"]:hover, img[alt*="notif"]:hover{    
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(245, 227, 227, 0.116); 
+    padding: 2.5px;
+}
+
+#user-menu{    
+    grid-column: -2 / -1;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+}
+
+/* 2nd layer of header */
+#nav-profile{
+    display: flex;
+}
+
+#header-links{
+    display: flex;    
+}
+
+#header-links li a{
+    display: block;
+    padding: 5px 25px;
+    font-size: 1rem;
+}
+
+#header-links li{    
+    background-color: var(--primary-color);        
+    border-radius: 15px;
+    margin: 0px 15px;
+}
+
+#header-links li:hover{    
+    background-color: var(--secondary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+#header-links li:hover a{
+    color: white;
+    filter: none;
+}
+
+/* Display Profile Picture */
+.display-picture{
+    height: 50px;
+    width: 50px;  
+    margin: 0px 15px;      
+}
+.display-picture img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+    object-position: top;
+    border-radius: 100%;
+}
+
 /* Sections */
 #sidebar{
     background-color: var(--primary-color);
@@ -146,19 +248,18 @@ nav ul[id^="lists"] a:hover::after{
     color: black;
 }
 
-header{
-    background-color: blue;
+header{    
     grid-column: 2 / -1;
 }
 
 main{
-    background-color: purple;
+    /* background-color: purple; */
     grid-row: 2 / -1;
     overflow-y: scroll;
 }
 
 #widgets{
-    background-color: orange;
+    /* background-color: orange; */
     grid-column: -2 / -1;
     grid-row: 2 / -1;
 }
