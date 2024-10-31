@@ -8,6 +8,10 @@
     --white-outline: drop-shadow(0 0 0 black) drop-shadow(2px 2px 0 white);
 }
 
+.gray{
+    color: var(--gray);
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
 box-sizing: border-box;
@@ -239,6 +243,20 @@ img[alt*="search"]:hover, img[alt*="notif"]:hover{
     object-fit:cover;
     object-position: top;
     border-radius: 100%;
+}
+
+/* Widgets */
+#widgets{
+    padding: 15px;    
+    overflow-y: scroll;
+}
+
+#announcement-card, #trending-card{
+    font-size: 0.8em;
+}
+
+.list-trending{
+    display: flex;
 }
 
 /* Sections */
